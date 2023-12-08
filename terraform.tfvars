@@ -6,7 +6,7 @@ resourcegroup_name = "rg-dxc-terraform-cicd"
 location = "west europe"
 
 tags = {
-  "Environment" = "Lab"
+  "Environment" = "Pro"
   "Owner"       = "dxc"
 }
 
