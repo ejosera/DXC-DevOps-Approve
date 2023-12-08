@@ -74,12 +74,7 @@ stages:
               provider: 'azurerm'
               command: 'plan'
               environmentServiceNameAzureRM: 'DevTestServiceConnection'
-          - task: TerraformTaskV4@4
-            displayName: apply
-            inputs:
-              provider: 'azurerm'
-              command: 'apply'
-              environmentServiceNameAzureRM: 'DevTestServiceConnection'
+
   # Approve
   - stage: Approve
     displayName: Approve
@@ -116,12 +111,6 @@ stages:
               backendAzureRmStorageAccountName: '$(bkstrg)'
               backendAzureRmContainerName: '$(bkcontainer)'
               backendAzureRmKey: '$(bkstrgkey)'
-          - task: TerraformTaskV4@4
-            displayName: plan
-            inputs:
-              provider: 'azurerm'
-              command: 'plan'
-              environmentServiceNameAzureRM: 'DevTestServiceConnection'
           - task: TerraformTaskV4@4
             displayName: apply
             inputs:
