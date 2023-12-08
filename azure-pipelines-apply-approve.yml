@@ -100,8 +100,6 @@ stages:
     condition: succeeded('Approve')
     dependsOn: Approve
     jobs:
-    condition: succeeded('tfvalidate')
-    dependsOn: tfvalidate
     jobs:
       - job: apply
         steps:
