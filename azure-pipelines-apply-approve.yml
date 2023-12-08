@@ -83,6 +83,8 @@ stages:
   # Approve
   - stage: Approve
     displayName: Approve
+    condition: succeeded('plan')
+    dependsOn: plan
     jobs:
     - job: approve
       displayName: Wait for approval
@@ -95,6 +97,9 @@ stages:
           instructions: 'Review the plan in the next hour'   
                 
   - stage: tfdeploy
+    condition: succeeded('Approve')
+    dependsOn: Approve
+    jobs:
     condition: succeeded('tfvalidate')
     dependsOn: tfvalidate
     jobs:
