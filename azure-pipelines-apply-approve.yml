@@ -100,7 +100,6 @@ stages:
     condition: succeeded('Approve')
     dependsOn: Approve
     jobs:
-    jobs:
       - job: apply
         steps:
           - task: TerraformInstaller@1
